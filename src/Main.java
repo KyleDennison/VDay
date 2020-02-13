@@ -44,9 +44,10 @@ public class Main extends Application {
 
 
         String name = "Name";
-        Font font = javafx.scene.text.Font.font("Toppan Bunkyu Gothic",25 );
+        Font font = javafx.scene.text.Font.font("Toppan Bunkyu Gothic", FontWeight.BOLD ,30 );
         Text text = new Text("Happy Valentines Day " + name + "!");
         text.setFont(font);
+        text.setFill(Color.PURPLE);
 
 
         text.setTextAlignment(TextAlignment.CENTER);
@@ -80,7 +81,7 @@ public class Main extends Application {
                 30.0, 100.0 }); //left point
 
          */
-        int[] radis = new int[]{20,25,26,30,25, 30};
+        int[] radis = new int[]{20,25,26,30,25, 32, 22, 28, 32, 35, 27, 21, 19,17, 18, 19, 20, 21, 22, 23, 24, 16, 32, 22,35, 20, 15, 27,30};
         Group hearts = new Group();
         for(int x : radis){
             Arc a1 = new Arc();
@@ -113,7 +114,7 @@ public class Main extends Application {
 
             heart.setFill(Color.RED);
             heart.setSmooth(true);
-            heart.setStroke(Color.BLACK);
+            heart.setStroke(Color.PALEVIOLETRED);
             heart.setStrokeWidth(4.0);
             hearts.getChildren().add(heart);
         }
@@ -219,12 +220,12 @@ public class Main extends Application {
         for (Node heart: hearts.getChildren()) {
             timeline.getKeyFrames().addAll(
                     new KeyFrame(Duration.ZERO, // set start position at 0
-                            new KeyValue(heart.translateXProperty(), r.nextInt(600 - (-100) + (-100))),
-                            new KeyValue(heart.translateYProperty(), r.nextInt(600 - (-100) + (-100)))
+                            new KeyValue(heart.translateXProperty(), r.nextInt(800 - (-100) + (-100))),
+                            new KeyValue(heart.translateYProperty(), r.nextInt(800 - (-100) + (-100)))
                     ),
                     new KeyFrame(new Duration(40000), // set end position at 40s
-                            new KeyValue(heart.translateXProperty(), r.nextInt(600 - (-100) + (-100))),
-                            new KeyValue(heart.translateYProperty(), r.nextInt(600 - (-100) + (-100)))
+                            new KeyValue(heart.translateXProperty(), r.nextInt(800 - (-100) + (-100))),
+                            new KeyValue(heart.translateYProperty(), r.nextInt(800 - (-100) + (-100)))
                     )
             );
         }
